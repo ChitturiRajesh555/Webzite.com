@@ -1,0 +1,316 @@
+
+    body.allowCursor {
+        cursor:url(../images/icons/custom-drag.png),auto!important
+    }
+
+.cursor {
+    opacity: 0
+}
+
+@media(min-width: 1025px) {
+    .circle-cursor--outer.hover-menu {
+        mix-blend-mode:screen
+    }
+
+    .circle-cursor {
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        border-radius: 50%
+    }
+
+    .cursor-in {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #fe5b46;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+        -ms-transform: translateX(-50%) translateY(-50%) scale(1);
+        transform: translateX(-50%) translateY(-50%) scale(1);
+        border-radius: 50%
+    }
+
+    .cursor-in.magnit {
+        width: 55px;
+        height: 55px;
+        border: 2px solid #fe5b46;
+        background: 0 0;
+        -webkit-transform: translateX(-49%) translateY(-52%) scale(1.3);
+        -ms-transform: translateX(-49%) translateY(-52%) scale(1.3);
+        transform: translateX(-49%) translateY(-52%) scale(1.3)
+    }
+
+    .cursor-in.wave:before {
+        background: #fe5b46;
+        position: absolute;
+        opacity: 1;
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        -webkit-animation: waveCircle 2s linear;
+        animation: waveCircle 2s linear;
+        margin-top: 2px;
+        margin-left: 2px
+    }
+
+    .cursor-in.wave:after {
+        background: #fe5b46;
+        position: absolute;
+        opacity: 1;
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        -webkit-animation: waveCircle2 3s .5s linear;
+        animation: waveCircle2 3s .5s linear;
+        margin-top: 2px;
+        margin-left: 2px
+    }
+
+    .circle-cursor--outer {
+        width: 100px;
+        height: 100px;
+        z-index: 12000;
+        opacity: 1;
+        top: -50px;
+        left: -50px;
+        mix-blend-mode: unset
+    }
+
+    .circle-cursor--outer.mixBlend .cursor-in {
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(3);
+        -ms-transform: translateX(-50%) translateY(-50%) scale(3);
+        transform: translateX(-50%) translateY(-50%) scale(3);
+        transition: opacity .7s cubic-bezier(.25,.45,.45,1),transform .7s cubic-bezier(.25,.45,.45,1),-webkit-transform .7s cubic-bezier(.25,.45,.45,1)
+    }
+
+    .circle-cursor--outer.no-blend {
+        mix-blend-mode: unset
+    }
+
+    .circle-cursor--outer.hover-btn {
+        width: 8px;
+        height: 8px;
+        left: -4px;
+        top: -4px;
+        background: #fe5b46;
+        border: 1px solid #fe5b46
+    }
+
+    .circle-cursor--outer .cursor-in {
+        background: #fe5b46
+    }
+
+    .circle-cursor--outer .prev-cursor-arr {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2.5px 5px 2.5px 0;
+        border-color: transparent #fe5b46 transparent transparent;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        will-change: transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        opacity: 0
+    }
+
+    .circle-cursor--outer .next-cursor-arr {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2.5px 0 2.5px 5px;
+        border-color: transparent transparent transparent #fe5b46;
+        position: absolute;
+        top: 50%;
+        right: 30%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        opacity: 0
+    }
+
+    .circle-cursor--inner {
+        width: 32px;
+        height: 32px;
+        left: 0;
+        top: 0;
+        z-index: 12000
+    }
+}
+
+.prev-click-cursor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #fe5b46;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0
+}
+
+.prev-click-cursor img {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(.8);
+    -ms-transform: translateX(-50%) translateY(-50%) scale(.8);
+    transform: translateX(-50%) translateY(-50%) scale(.8);
+    left: 50%
+}
+
+.next-click-cursor {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    border: 1px solid #fe5b46;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%) translateX(50%);
+    -ms-transform: translateY(-50%) translateX(50%);
+    transform: translateY(-50%) translateX(50%);
+    opacity: 0
+}
+
+.next-click-cursor img {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(.8);
+    -ms-transform: translateX(-50%) translateY(-50%) scale(.8);
+    transform: translateX(-50%) translateY(-50%) scale(.8);
+    right: 20%
+}
+
+.hover-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transition: opacity .7s cubic-bezier(.39,.58,.57,1),-webkit-transform .7s ease-out;
+    transition: opacity .7s cubic-bezier(.39,.58,.57,1),-webkit-transform .7s ease-out;
+    -o-transition: opacity .7s cubic-bezier(.39,.58,.57,1),transform .7s ease-out;
+    transition: opacity .7s cubic-bezier(.39,.58,.57,1),transform .7s ease-out;
+    transition: opacity .7s cubic-bezier(.39,.58,.57,1),transform .7s ease-out,-webkit-transform .7s ease-out;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1.3);
+    -ms-transform: translateX(-50%) translateY(-50%) scale(1.3);
+    transform: translateX(-50%) translateY(-50%) scale(1.3)
+}
+
+.hover-circle .parallaxMoveCircle {
+    width: 75px;
+    height: 75px;
+    border: 1px solid #000;
+    border-radius: 50%
+}
+
+@-webkit-keyframes waveCircle {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(6.5);
+        transform: scale(6.5);
+        opacity: 0
+    }
+}
+
+@keyframes waveCircle {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(6.5);
+        transform: scale(6.5);
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes waveCircle2 {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(10.5);
+        transform: scale(10.5);
+        opacity: 0
+    }
+}
+
+@keyframes waveCircle2 {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(10.5);
+        transform: scale(10.5);
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes moveLeftArrow {
+    0% {
+        left: 30%
+    }
+
+    100% {
+        left: 33%
+    }
+}
+
+@keyframes moveLeftArrow {
+    0% {
+        left: 30%
+    }
+
+    100% {
+        left: 33%
+    }
+}
+
+@-webkit-keyframes moveRightArrow {
+    0% {
+        left: 30%
+    }
+
+    100% {
+        right: 33%
+    }
+}
+
+@keyframes moveRightArrow {
+    0% {
+        left: 30%
+    }
+
+    100% {
+        right: 33%
+    }
+}
